@@ -138,8 +138,10 @@ export async function POST(request: Request) {
     await Promise.all(
       allHeadshots.map(async (image) => {
         const { error: imageError } = await supabase.from("images").insert({
-          modelId: Number(model.id),
-          uri: image,
+          // modelId: Number(model.id),
+          // uri: image,
+          modelId: 10,
+          uri: "https://h2hkjyaxrb6dwomp.public.blob.vercel-storage.com/Linkedin_man4-TCXLjOULcT6yeTaRgTLy1dkb1ASRVy.jpg",
         });
         if (imageError) {
           console.error({ imageError });
