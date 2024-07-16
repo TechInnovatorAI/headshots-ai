@@ -139,7 +139,8 @@ export async function POST(request: Request) {
       allHeadshots.map(async (image) => {
         const { error: imageError } = await supabase.from("images").insert({
           modelId: Number(model.id),
-          uri: image,
+          // uri: image,
+          uri: "https://sdbooth2-production.s3.amazonaws.com/jdzsy6gbj6kr10bekosfx9pr9mkh",
         });
         if (imageError) {
           console.error({ imageError });
